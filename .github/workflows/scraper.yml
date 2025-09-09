@@ -26,3 +26,9 @@ jobs:
         run: python scraper.py
         env:
           LI_AT_COOKIE: ${{ secrets.LI_AT_COOKIE }}
+
+      - name: Upload Excel
+        uses: actions/upload-artifact@v3
+        with:
+          name: linkedin-data
+          path: "*.xlsx"
