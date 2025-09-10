@@ -23,7 +23,7 @@ jobs:
           playwright install chromium
 
       - name: Run scraper
-        run: python scraper.py
+        run: python li_script.py
         env:
           LI_AT_COOKIE: ${{ secrets.LI_AT_COOKIE }}
 
