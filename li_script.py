@@ -89,10 +89,11 @@ def scrape_all():
 
         all_data = posts_data + jobs_data
 
-        if all_data:
-            df = pd.DataFrame(all_data)
-            df.to_excel(OUTPUT_FILE, index=False)
-           print(f"✅ Saved {len(all_data)} records to {OUTPUT_FILE}")
+        
+        df = pd.DataFrame(all_data)
+        df.to_excel(OUTPUT_FILE, index=False)
+        
+        print(f"✅ Saved {len(all_data)} records to {OUTPUT_FILE}")
 
         browser.close()
 
@@ -101,4 +102,5 @@ if __name__ == "__main__":
         print("❌ Error: LI_AT_COOKIE not set. Add it as environment variable or GitHub secret.")
     else:
         scrape_all()
+
 
