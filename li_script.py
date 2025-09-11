@@ -92,9 +92,7 @@ def scrape_all():
         if all_data:
             df = pd.DataFrame(all_data)
             df.to_excel(OUTPUT_FILE, index=False)
-            print(f"✅ Scraped {len(all_data)} records and saved to {OUTPUT_FILE}")
-        else:
-            print("⚠️ No data scraped. Check cookie or filters.")
+           print(f"✅ Saved {len(all_data)} records to {OUTPUT_FILE}")
 
         browser.close()
 
@@ -103,3 +101,4 @@ if __name__ == "__main__":
         print("❌ Error: LI_AT_COOKIE not set. Add it as environment variable or GitHub secret.")
     else:
         scrape_all()
+
